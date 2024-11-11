@@ -10,14 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <main>
+  <!-- <main> -->
     <div class="left">
-      <img src="./assets/icon/Logo.png" alt="logo">
+      <img src="./assets/icon/Logo.png" class="logo" alt="logo">
       <div>
-        <img src="./assets/icon/verify.png" alt="image">
+        <img src="./assets/icon/verify.png" class="mockup" alt="image">
       </div>
-      <div>
-        <p><p>Copyright © PAYBUDDIES <span class="copyright"></span>. </p></p>
+      <div class="left-bottom">
+        <p>Copyright © PAYBUDDIES <span class="copyright"></span>. </p>
         <div>
           <p>Help Center</p>
           <p>Terms of Service</p>
@@ -27,26 +27,72 @@
 
     <div class="right">
       <div>
-        <h2></h2>
-        <p></p>
-        <div>
+        <div class="flyover">
+          <img src="./assets/icon/Logo.png" class="mobile-logo" alt="logo">
+          <img src="./assets/icon/flyover.png" class="flyover-img" alt="flyover">
+        </div>
+        <div class="right-top">
+          <h2>Verify your Email</h2>
+          <p>Please enter the OTP sent to the email address you provided</p>
+        </div>
+        <div class="input-div">
           <div>
-            <input>
-            <input>
-            <input>
-            <input>
-            <input>
-            <input>
+            <input type="text" maxlength="1" class="pin-input" id="pin1" oninput="moveForward(this, 'pin2')">
+            <input type="text" maxlength="1" class="pin-input" id="pin2" oninput="moveForward(this, 'pin3')" onkeydown="moveBackward(event, 'pin1')">
+            <input type="text" maxlength="1" class="pin-input" id="pin3" oninput="moveForward(this, 'pin4')" onkeydown="moveBackward(event, 'pin2')">
+            <input type="text" maxlength="1" class="pin-input" id="pin4" oninput="moveForward(this, 'pin5')" onkeydown="moveBackward(event, 'pin3')">
+            <input type="text" maxlength="1" class="pin-input" id="pin5" oninput="moveForward(this, 'pin6')" onkeydown="moveBackward(event, 'pin4')">
+            <input type="text" maxlength="1" class="pin-input" id="pin6" onkeydown="moveBackward(event, 'pin5')">
           </div>
-          <p></p>
+          <div class="alert">
+            <img src="./assets/icon/alert.png" alt="alert icon">
+            <p>Invalid otp. Enter the otp sent to johndoe123@email.com</p>
+          </div>
         </div>
 
-        <div>
-          <p></p>
-          <button></button>
+        <div class="right-bottom">
+          <p>Didn`t recieve OTP? <span class="resend">Resend code</span></p>
+          <button class="button">Verify email</button>
+        </div>
+
+        <div class="left-bottom mobile">
+          <p>Copyright © PAYBUDDIES <span class="copyright"></span>. </p>
+          <div>
+            <p>Help Center</p>
+            <p>Terms of Service</p>
+          </div>
         </div>
       </div>
     </div>
-  </main>
+  <!-- </main> -->
+
+  <script>
+    function moveForward(current, nextId) {
+        if (current.value.length >= 1) {
+            document.getElementById(nextId).focus();
+            current.classList.add('active');
+        }
+        checkAllFilled();
+    }
+
+    function moveBackward(event, prevId) {
+        if (event.key === "Backspace" && event.target.value.length === 0) {
+            document.getElementById(prevId).focus();
+        }
+        checkAllFilled();
+    }
+
+    function checkAllFilled() {
+        const inputs = document.querySelectorAll("input[type='text']");
+        const allFilled = Array.from(inputs).every(input => input.value.length >= 1);
+        const button = document.querySelector('.button');
+
+        if (allFilled) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    }
+  </script>
 </body>
 </html>
