@@ -17,7 +17,8 @@ body{
   flex-direction: column;
   align-items: center;
   padding: 20px 30px 50px 30px;
-  width: 40vw;
+  width: 70%;
+  /* max-width: 600px; */
 }
 
 .logo{
@@ -62,7 +63,7 @@ body{
   background: rgba(255, 242, 255, 1) url("./assets/icon/verifypattern.png") no-repeat;
   background-size: cover;
   height: 100%;
-  width: 60vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,6 +79,8 @@ body{
   background-color: white;
   border-radius: 4px;
   padding: 20px 30px;
+  width: 70%;
+  /* max-width: 400px; */
 }
 
 .flyover{
@@ -168,4 +171,55 @@ body{
 
 .button.active{
   opacity: 1;
+}
+
+/* responsiveness style for mobile */
+@media (max-width: 768px) {
+  .left{
+    display: none;
+  }
+
+  .right{
+    background: white;
+    max-width: 100%;
+  }
+
+  .right div{
+    padding:10px 20px;
+    width: 100%;
+  }
+
+  .flyover{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-logo{
+    width: 150px;
+    margin-bottom: -30px;
+  }
+
+  .flyover-icon{
+    width: 200px;
+  }
+
+  .pin-input{
+    width: 50px;
+  }
+
+  .alert{
+    margin-top: 20px;
+  }
+
+  .mobile{
+    display: flex;
+  }
+
+  .left-bottom p{
+    font-size: 12px;
+    font-weight: 400;
+    color: #353535;
+  }
 }
