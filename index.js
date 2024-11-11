@@ -115,20 +115,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Faq question answer reveal implementation
-const answerShow = document.getElementById('answerShow');
-const answerHide = document.getElementById('answerHide');
-const faqDrop = document.getElementById('faqDrop');
+const faqs = document.querySelectorAll('.faq');
 
-answerShow.addEventListener('click', function showAnswer(){
-  answerShow.style.display = 'none';
-  answerHide.style.display = 'block';
-  faqDrop.style.display = 'flex';
-});
+faqs.forEach(faq => {
+  const answerShow = faq.querySelector('#answerShow');
+  const answerHide = faq.querySelector('#answerHide');
+  const faqDrop = faq.querySelector('.faq-drop');
 
-answerHide.addEventListener('click', function hideAnswer(){
-  answerShow.style.display = 'block';
-  answerHide.style.display = 'none';
-  faqDrop.style.display = 'none';
+  answerShow.addEventListener('click', function() {
+    faqs.forEach(otherFaq => {
+      if (otherFaq !== faq) {
+        otherFaq.querySelector('#answerShow').style.display = 'block';
+        otherFaq.querySelector('#answerHide').style.display = 'none';
+        otherFaq.querySelector('.faq-drop').style.display = 'none';
+        otherFaq.classList.remove('active');
+      }
+    });
+
+    answerShow.style.display = 'none';
+    answerHide.style.display = 'block';
+    faqDrop.style.display = 'flex';
+    faq.classList.add('active');
+  });
+
+  answerHide.addEventListener('click', function() {
+    answerShow.style.display = 'block';
+    answerHide.style.display = 'none';
+    faqDrop.style.display = 'none';
+    faq.classList.remove('active');
+  });
 });
 
 // copyright

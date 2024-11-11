@@ -1094,11 +1094,15 @@ body{
   position: relative;
 }
 
+.faq.active{
+  border: 1px solid #cc33cc1b;
+}
+
 .faq-question{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50vw;
+  width: 45vw;
   cursor: pointer;
 }
 
@@ -1145,6 +1149,10 @@ body{
 @media (max-width: 768px) {
   .faq-container{
     flex-direction: column;
+  }
+
+  .faq-question{
+    width: 85vw;
   }
 
   .faq-drop{
