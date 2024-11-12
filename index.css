@@ -27,34 +27,12 @@ body{
 .appear{
   animation: appear linear;
   animation-timeline: view();
-  animation-range: entry 0 cover 40%;
-}
-
-@keyframes slide{
-  0%{
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100%{
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.slide{
-  animation: slide linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 30%;
+  animation-range: entry 0 cover 35%;
 }
 
 /* Entry animation for each section on mobile */
 @media (max-width: 768px) {
-  .appear{
-    animation-range: entry 0 cover 30%;
-  }
-  .slide{
-    animation-range: entry 0 cover 30%;
-  }
+
 }
 
 /* Hero section styles */
@@ -295,11 +273,7 @@ body{
   cursor: pointer;
 }
 
-.hamburger{
-  display: none;
-}
-
-.cancel{
+.hide{
   display: none;
 }
 
@@ -393,6 +367,7 @@ body{
   }
 
   .cancel{
+    display: none;
     cursor: pointer;
   }
 

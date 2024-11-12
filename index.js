@@ -49,7 +49,8 @@ if (window.innerWidth <= 768){
       mobileNav.style.display = 'none';
     }
     else{
-      hamburger.style.display = 'none';
+      hamburger.classList.add('hide');
+      mobileNav.style.display = 'none';
     }
   });
 };
@@ -60,6 +61,19 @@ hamburger.addEventListener('click', function openNav(){
     hamburger.style.display = 'none';
     mobileNav.style.display = 'flex';
   }
+});
+
+window.addEventListener('resize', () => {
+  const widthThreshold = 769;
+    if (window.innerWidth >= widthThreshold) {
+        hamburger.style.display = 'none';
+        cancel.style.display = 'none';
+        mobileNav.style.display = 'none';
+    } else {
+        hamburger.style.display = 'block';
+        cancel.style.display = 'none';
+        mobileNav.style.display = 'none';
+    }
 });
 
 const mobileProducts = document.getElementById('mobileProducts');
