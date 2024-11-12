@@ -27,3 +27,13 @@ function checkAllFilled() {
       button.classList.remove('active');
   }
 }
+
+// copyright
+let date = new Date();
+let year = date.getFullYear();
+console.log(year);
+
+const copyright = document.querySelectorAll('.copyright');
+copyright.forEach(copyrights => {
+  copyrights.textContent = year;
+})

@@ -9,6 +9,7 @@ body{
   background-image: url(./assets/backgrounds/fetaure_bg.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Entry animation for each section */
@@ -26,7 +27,7 @@ body{
 .appear{
   animation: appear linear;
   animation-timeline: view();
-  animation-range: entry 0 cover 45%;
+  animation-range: entry 0 cover 40%;
 }
 
 @keyframes slide{
@@ -43,7 +44,7 @@ body{
 .slide{
   animation: slide linear;
   animation-timeline: view();
-  animation-range: entry 0 cover 40%;
+  animation-range: entry 0 cover 30%;
 }
 
 /* Entry animation for each section on mobile */
@@ -67,6 +68,13 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 10px 5%;
+  background-color: #D4E2FE;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .links ul{
@@ -128,8 +136,8 @@ body{
 
 /* Mobile dropdown styles */
 #mobileNav{
-  position: absolute;
-  top: 11%;
+  position: fixed;
+  top: 8%;
   left: 0;
   background-color: white;
   width: 100%;
@@ -142,6 +150,7 @@ body{
 
 #mobileNav.active{
   display: flex;
+  z-index: 100;
 }
 
 .mobile-navlist li, .mobile-navlist a{
@@ -365,69 +374,17 @@ body{
   opacity: 0.9;
 }
 
-.avatar-rack{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.avatar{
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.avatar:nth-child(1){
-  background-color: #FFBC99;
-  margin-right: -10px;
-}
-
-.avatar:nth-child(2){
-  background-color: #CABDFF;
-  margin-right: -10px;
-}
-
-.avatar:nth-child(3){
-  background-color: #B5E4CA;
-}
-
-.avatar img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.trusted-container{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.trusted{
-  max-width: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-}
-
-.trusted h3{
-  color: #03359A;
-  font-size: 50px;
-  font-weight: 400;
-}
-
-.trusted p{
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 15.52px;
-  letter-spacing: -4%;
-  margin: 10px 0;
+@media (min-width: 768px) {
+  .logo img{
+    width: 288.49px;
+    height: 48px;
+  }
 }
 
 /* mobile responsiveness styles for hero section */
 @media screen and (max-width: 768px) {
   .logo img{
-    width: 200px;
+    width: 154px;
   }
 
   .hamburger{
@@ -719,18 +676,8 @@ body{
 }
 
 .pay-buddies{
-  position: relative;
-}
-
-.pay-buddies::before{
-  content: '';
-  position: absolute;
-  bottom: 12%;
-  left: 0;
-  height: 8px;
-  width: 100%;
-  background-color: #CC33CC;
-  opacity: 0.5;
+  font-weight: 700;
+  color: #03359A;
 }
 
 .about-head{
@@ -1092,6 +1039,17 @@ body{
   border: 1px solid #CC33CC;
   border-radius: 12px;
   position: relative;
+  transition: all 0.3s ease;
+  animation: open 0.3s ease forwards;
+}
+
+@keyframes open {
+  0%{
+    height: auto;
+  }
+  100%{
+    height: 100%;
+  }
 }
 
 .faq.active{
@@ -1107,6 +1065,8 @@ body{
 }
 
 .faq-question p{
+  font-size: 18px;
+  font-weight: 400;
   color: #03359A;
 }
 
@@ -1122,7 +1082,20 @@ body{
   text-align: left;
   gap: 20px;
   width: 100%;
+  transition: all 0.3s ease;
   display: none;
+  animation: easeOut 0.4s ease forwards;
+}
+
+@keyframes easeOut {
+  0%{
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .two{
@@ -1134,7 +1107,7 @@ body{
 }
 
 .faq-drop p{
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: -0.25px;
@@ -1155,12 +1128,12 @@ body{
     width: 85vw;
   }
 
-  .faq-drop{
-    width: 100%;
+  .faq-question p, .faq-drop p{
+    font-size: 14px;
   }
 
-  .faq-drop p{
-    font-size: 13px;
+  .faq-drop{
+    width: 100%;
   }
 }
 
@@ -1185,6 +1158,7 @@ body{
   flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
+  width: 50%;
   gap: 15px;
 }
 
@@ -1219,7 +1193,7 @@ body{
 .contact-box h2{
   font-size: 58px;
   font-weight: 500;
-  line-height: 45px;
+  line-height: 70px;
   letter-spacing: -2px;
   color: #03359A;
 }

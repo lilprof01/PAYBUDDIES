@@ -135,6 +135,7 @@ faqs.forEach(faq => {
     answerShow.style.display = 'none';
     answerHide.style.display = 'block';
     faqDrop.style.display = 'flex';
+    faqDrop.style.opacity = '1';
     faq.classList.add('active');
   });
 
