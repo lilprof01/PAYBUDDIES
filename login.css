@@ -1,0 +1,338 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 2%;
+    width: 70%;
+}
+
+.main-logo {
+    width: fit-content;
+    height: 48px;
+    align-self: baseline;
+    margin-bottom: 30px;
+}
+
+.left-image {
+    width: 400px;
+    margin-bottom: 50px;
+}
+
+.left-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    text-align: left;
+}
+
+.mobile {
+    display: none;
+}
+
+.left-footer div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+}
+
+.left-footer p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #353535;
+}
+
+.right-section {
+    background: rgba(255, 242, 255, 1) url("./images/login bg right.jpg") no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px 30px;
+    width: 70%;
+    /* max-width: 400px; */
+}
+
+.flyover {
+    display: none;
+}
+
+
+.form-container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px 20px;
+    position: absolute;
+    width: 563px;
+    height: 450px;
+    left: calc(72% - 563px/2);
+    top: calc(50% - 450px/2);
+    background: #FFFFFF;
+    border-radius: 4px;
+
+}
+
+.login-header {
+    font-family: "Poppins";
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: center;
+    color: #353535;
+    gap: 10px;
+}
+
+.login-description {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 10px;
+    text-align: center;
+    color: #808080;
+}
+
+form {
+    flex-direction: column;
+}
+
+label {
+    width: 38px;
+    height: 14px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #353535;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    width: 100%;
+    padding-right: 2rem;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.mobile-header {
+    display: none;
+}
+
+.email-input,
+#password {
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #E6E6E6;
+    padding: 8px;
+    gap: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #000000;
+    outline-color: #CC33CC;
+}
+
+
+input::placeholder {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #444A58;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.password-reset {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.password-reset p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #666666;
+}
+
+.password-reset a {
+    text-decoration: none;
+    color: #CC33CC;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.button-section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+button {
+    padding: 12px 16px;
+    background: #CC33CC;
+    border-radius: 8px;
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.footer-message {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-message p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666B2;
+}
+
+.footer-message a {
+
+    width: 111px;
+    height: 24px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: #CC33CC;
+
+}
+
+
+.button {
+    padding: 12px 16px;
+    width: 100%;
+    background-color: #CC33CC;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 1;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+/* responsiveness style for mobile */
+@media (max-width: 768px) {
+    .left-section {
+        display: none;
+    }
+
+    .right-section {
+        background: white;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .right-section>div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .mobile-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-logo {
+        width: 161px;
+        height: 30px;
+        margin-top: 30px;
+    }
+
+    .second-image {
+        width: 379px;
+        height: 138px;
+      
+    }
+
+    .login-section{
+        margin-top: 50px;
+    }
+
+    .mobile {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        padding: 0 20px;
+    }
+
+    .mobile p {
+        font-size: 12px;
+    }
+}

@@ -4,73 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PayBuddies Login</title>
-    <link rel="stylesheet" href="Jawad.css">
+    <title>Log In</title>
+    <link rel="stylesheet" href="./login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
-
-        <div class="leftsection">
-
-            <img src="./Olamide/logo.png" alt="PayBuddies Logo" class="logo">
-
-            <img src="./Olamide/mobile logo.jpg" alt="" class="mobileLogo">
-
-
-            <img src="./Olamide/onboard img.jpg" alt="Login Images" class="leftSectionImage">
-
-            <div class="footerTextLeft">
-                <p>© PAYBUDDIES 2024</p>
+    <div class="left-section">
+        <img src="./images/logo.png" class="main-logo" alt="logo">
+        <div>
+            <img src="./images/onboard img.jpg" class="left-image" alt="image">
+        </div>
+        <div class="left-footer">
+            <p>&copy; PAYBUDDIES <span class="copyright-symbol"></span>.</p>
+            <div>
                 <p>Help Center</p>
                 <p>Terms of Service</p>
             </div>
-
-
         </div>
+    </div>
 
-        <div class="rightSection">
-
-            <div class="LogInSection">
-                <p class="logInHead">Log In</p>
-
-                <p class="logInText">Log in to take control of your finances today.</p>
-
-                <form action="">
-                    <label for="email">Email</label>
-                    <input type="email" name="" id="" placeholder="Enter your email address">
-
-                    <label for="Password">Password</label>
-                    <div>
-                        <input type="password" name="" id="" placeholder="Enter your password">
-                    </div>
-                </form>
-
-                <div class="passwordReset">
-                    <p>Forgot password?</p>
-                    <a href="#">Reset here</a>
-                </div>
-
-                <button>Login</button>
-
-                <div class="rightSectionFooter">
-                    <p>Don’t have an account</p>
-
-                    <a href="#">Create an account</a>
-                </div>
+    <div class="right-section">
+        <div>
+            <div class="mobile-header">
+                <img src="./images/logo.png" class="mobile-logo" alt="logo">
+                <img src="./images/second-image.jpg" class="second-image" alt="">
             </div>
 
+            <div class="form-container">
+                <div class="login-section">
+                    <p class="login-header">Log In</p>
+                    <p class="login-description">Log in to take control of your finances today.</p>
 
+                    <form action="" id="loginForm">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email address"
+                            class="email-input">
+                        <div id="emailError" class="error-message"></div>
 
+                        <label for="Password">Password</label>
+                        <div class="password-container">
+                            <input type="password" name="password" id="password" placeholder="Enter your password">
+                            <i class="toggle-password fa-solid fa-eye" onclick="togglePassword()"></i>
+                        </div>
+                        <div id="passwordError" class="error-message"></div>
+                    </form>
 
+                    <div class="button-section">
+                        <button onclick="LogIn()">Login</button>
+                        <span class="password-reset">
+                            <p>Forgot password?</p>
+                            <a href="#">Reset here</a>
+                        </span>
+                    </div>
+
+                    <div class="footer-message">
+                        <p>Don’t have an account? <span><a href="#">Create account</a></span></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="left-footer mobile">
+                <p>&copy; PAYBUDDIES <span class="copyright-symbol"></span>.</p>
+                <div>
+                    <p>Help Center</p>
+                    <p>Terms of Service</p>
+                </div>
+            </div>
         </div>
-
     </div>
+
+    <script src="./login.js"></script>
 </body>
 
 </html>

@@ -1187,6 +1187,11 @@ body{
   border-radius: 4px;
 }
 
+.dm input:focus, .dm textarea:focus{
+  border: 2px solid #CC33CC;
+  outline: none;
+}
+
 .dm input{
   width: 100%;
   padding: 14px 18px;

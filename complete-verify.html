@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verify Email</title>
+  <title>Verification Complete</title>
   <link rel="stylesheet" href="./verify.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- left section -->
   <div class="left">
     <img src="./assets/icon/Logo.png" class="logo" alt="logo">
     <div>
@@ -24,6 +25,7 @@
     </div>
   </div>
 
+  <!-- right section -->
   <div class="right">
     <div>
       <div class="flyover">
@@ -31,28 +33,16 @@
         <img src="./assets/icon/flyover.png" class="flyover-img" alt="flyover">
       </div>
       <div class="right-top">
-        <h2>Verify your Email</h2>
-        <p>Please enter the OTP sent to the email address you provided</p>
+        <h2>Account Created Successfully</h2>
+        <p>Your account has been created successfully. Proceed to create transaction pin</p>
       </div>
-      <div class="input-div">
-        <div class="inputs">
-          <input type="text" maxlength="1" class="pin-input" id="pin1" oninput="moveForward(this, 'pin2')">
-          <input type="text" maxlength="1" class="pin-input" id="pin2" oninput="moveForward(this, 'pin3')" onkeydown="moveBackward(event, 'pin1')">
-          <input type="text" maxlength="1" class="pin-input" id="pin3" oninput="moveForward(this, 'pin4')" onkeydown="moveBackward(event, 'pin2')">
-          <input type="text" maxlength="1" class="pin-input" id="pin4" oninput="moveForward(this, 'pin5')" onkeydown="moveBackward(event, 'pin3')">
-          <input type="text" maxlength="1" class="pin-input" id="pin5" oninput="moveForward(this, 'pin6')" onkeydown="moveBackward(event, 'pin4')">
-          <input type="text" maxlength="1" class="pin-input" id="pin6" onkeydown="moveBackward(event, 'pin5')">
-        </div>
-        <div class="alert">
-          <img src="./assets/icon/alert.png" alt="alert icon">
-          <p>Invalid otp. Enter the otp sent to johndoe123@email.com</p>
-        </div>
+
+      <div class="check">
+        <img src="./assets/icon/check-bold.png">
       </div>
 
       <div class="right-bottom">
-        <p>Didn`t recieve OTP? <span class="resend"><a href="">Resend code</a></span></p>
-        <!-- backend should unwrap the anchor tag from the button below -->
-        <a href="./complete-verify.html"><button type="submit" id="verifyBtn" class="button" disabled>Verify email</button></a>
+        <button type="submit" id="verifyBtn" class="button">Create pin</button>
       </div>
 
       <div class="left-bottom mobile">

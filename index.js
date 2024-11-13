@@ -39,21 +39,17 @@ if (window.innerWidth > 768){
   hamburger.classList.add('hide');
 };
 
-if (window.innerWidth <= 768){
-  hamburger.classList.remove('hide');
-
-  cancel.addEventListener('click', function closeNav(){
-    if (window.innerWidth <= 768){
-      cancel.style.display = 'none';
-      hamburger.style.display = 'block';
-      mobileNav.style.display = 'none';
-    }
-    else{
-      hamburger.classList.add('hide');
-      mobileNav.style.display = 'none';
-    }
-  });
-};
+cancel.addEventListener('click', function closeNav(){
+  if (window.innerWidth <= 768){
+    cancel.style.display = 'none';
+    hamburger.style.display = 'block';
+    mobileNav.style.display = 'none';
+  }
+  else{
+    hamburger.classList.add('hide');
+    mobileNav.style.display = 'none';
+  }
+});
 
 hamburger.addEventListener('click', function openNav(){
   if (window.innerWidth <= 768){
