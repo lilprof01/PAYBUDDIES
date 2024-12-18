@@ -12,15 +12,15 @@
             <div class="left">
                 <div class="container">
                     <div class="logo">
-                        <img src="./Seyi/Logo.png" alt="logo" />
-                       
+                        <!-- <img src="./Seyi/Logo.png" alt="logo" /> -->
+                        <h1 style="color: purple;">PAYXYZ</h1>
                     </div>
                     <div class="svg">
                         <img src="./Seyi/svg.png" alt="" />
                     </div>
                     <div class="footer">
                         <div class="copyright">
-                            <p>&copy; PAYBUDDIES <span id="year"></span></p>
+                            <p>&copy; PAYXYZ <span id="year"></span></p>
                         </div>
                         <div class="links">
                             <a href="#">Help Center</a>
@@ -42,28 +42,28 @@
                       <div class="form-row">
                         <div class="form-group">
                           <label for="firstName">First name <span class="required">*</span></label>
-                          <input type="text" id="firstName" placeholder="Enter first name" required>
+                          <input class="pin-input" type="text" id="firstName" placeholder="Enter first name" required>
                         </div>
                         <div class="form-group">
                           <label for="lastName">Last name <span class="required">*</span></label>
-                          <input type="text" id="lastName" placeholder="Enter last name" required>
+                          <input class="pin-input" type="text" id="lastName" placeholder="Enter last name" required>
                         </div>
                       </div>
                   
                       <div class="form-row">
                         <div class="form-group">
                           <label for="middleName">Middle name <span class="required">*</span></label>
-                          <input type="text" id="middleName" placeholder="Enter middle name">
+                          <input class="pin-input" type="text" id="middleName" placeholder="Enter middle name">
                         </div>
                         <div class="form-group">
                           <label for="dob">Date of birth <span class="required">*</span></label>
-                          <input type="date" id="dob" placeholder="DD | MM | YYYY" required>
+                          <input class="pin-input" type="date" id="dob" placeholder="DD | MM | YYYY" required>
                         </div>
                       </div>
                   
                       <div class="form-group">
                         <label for="bvn">BVN number <span class="required">*</span></label>
-                        <input type="text" id="bvn" placeholder="Enter your BVN number" required>
+                        <input class="pin-input" type="text" id="bvn" placeholder="Enter your BVN number" required>
                       </div>
                   
                       <div class="form-group">
@@ -81,40 +81,41 @@
                                 <span class="custom-arrow">&#9662;</span> 
                               </div>
                             </div>
-                            <input type="tel" id="phone" placeholder="8123456789" required>
+                            <input class="pin-input" type="tel" id="phone" placeholder="8123456789" required>
                         </div>
                       </div>
                   
                       <div class="form-group">
                         <label for="email">Email <span class="required">*</span></label>
-                        <input type="email" id="email" placeholder="johndoe@email.com" required>
+                        <input class="pin-input" type="email" id="email" placeholder="johndoe@email.com" required>
                       </div>
                   
                       <div class="form-group password-group">
                         <label for="password">Password <span class="required">*</span></label>
-                        <input type="password" id="password" placeholder="Enter strong password" required>
+                        <input class="pin-input" type="password" id="password" placeholder="Enter strong password" required>
                         <button type="button" class="toggle-password">Show</button>
                       </div>
                   
                       <div class="form-group password-group">
                         <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
-                        <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
+                        <input class="pin-input" type="password" id="confirmPassword" placeholder="Re-enter password" required>
                         <button type="button" class="toggle-password">Show</button>
                       </div>
                   
                       <div class="form-group">
                         <label for="referral">Referral code (optional)</label>
-                        <input type="text" id="referral" placeholder="#1234567">
+                        <input class="pin-input" type="text" id="referral" placeholder="#1234567">
                       </div>
                   
-                      <button type="submit" class="submit-button">Create account</button>
+                      <a href="./complete-verify.html"><button id="submitBtn" class="submit-button" disabled><a href="./complete-verify.html" style="color: white;">Create account</a></button></a>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 </body>
-<script>
+
+<script src="./create-account.js">
     let year = document.getElementById("year");
     let date = new Date();
     let getDate = date.getFullYear();

@@ -18,11 +18,12 @@ body{
   width: 70%;
 }
 
-.logo{
+.left h1{
   width: fit-content;
   height: 48px;
   align-self: baseline;
   margin-bottom: 30px;
+  color: purple;
 }
 
 .mockup{
@@ -126,7 +127,7 @@ body{
 }
 
 .pin-input:focus {
-  border: 1px solid #CC33CC;
+  border: 1px solid purple;
   outline: none;
 }
 
@@ -156,14 +157,14 @@ body{
 }
 
 .resend a{
-  color: #CC33CC;
+  color: purple;
   cursor: pointer;
 }
 
 .button{
   padding: 12px 16px;
   width: 100%;
-  background-color: #CC33CC;
+  background-color: purple;
   color: white;
   border: none;
   border-radius: 8px;
@@ -171,7 +172,6 @@ body{
   font-weight: 500;
   opacity: 1;
   margin-top: 30px;
-  cursor: pointer;
 }
 
 .button:disabled {
@@ -193,14 +193,14 @@ body{
 }
 
 .email input{
-  border: 1px solid #CC33CC;
+  border: 1px solid purple;
   border-radius: 8px;
   padding: 8px;
   width: 100%;
 }
 
 .email input:focus{
-  border: 2px solid #CC33CC;
+  border: 2px solid purple;
   outline: none;
 }
 
