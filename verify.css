@@ -136,7 +136,7 @@ body{
   align-items: center;
   gap: 3px;
   margin-top: 10px;
-  /* display: none; */
+  display: none;
 }
 
 .alert p{
@@ -227,11 +227,12 @@ body{
   position: relative;
 }
 
-.input-holder img{
+.input-holder i{
   position: absolute;
   right: 5%;
   top: 30%;
   cursor: pointer;
+  width: 1px;
 }
 
 /* responsiveness style for mobile */

@@ -7,7 +7,7 @@ function moveToNextInput(currentInput, inputArray) {
   if (currentInput.value !== '' && currentIndex < inputArray.length - 1) {
       inputArray[currentIndex + 1].focus();
   }
-}
+};
 
 // Function to move focus to the previous input on backspace
 function moveToPreviousInput(currentInput, inputArray) {
@@ -15,7 +15,7 @@ function moveToPreviousInput(currentInput, inputArray) {
   if (currentIndex > 0 && currentInput.value === '') {
       inputArray[currentIndex - 1].focus();
   }
-}
+};
 
 // Function to check if all pin inputs are filled
 function checkIfAllFilled() {
@@ -26,7 +26,7 @@ function checkIfAllFilled() {
       }
   });
   verifyBtn.disabled = !allFilled; // Enable button if all are filled
-}
+};
 
 // Add event listeners to pin inputs
 pinInputs.forEach(input => {
@@ -46,6 +46,42 @@ pinInputs.forEach(input => {
   });
 });
 
+function togglePassword() {
+  const passwordInput = document.querySelectorAll("input[type='password']");
+  const passwordToggle = document.querySelectorAll(".toggle-password");
+
+  passwordInput.forEach(() => {
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      passwordToggle.classList.remove("fa-eye");
+      passwordToggle.classList.add("fa-eye-slash");
+    } else {
+        passwordInput.type = "password";
+        passwordToggle.classList.remove("fa-eye-slash");
+        passwordToggle.classList.add("fa-eye");
+    }
+  })
+};
+
+// function togglePassword() {
+//   const passwordInputs = document.querySelectorAll("input[type='password']");
+//   const passwordToggles = document.querySelectorAll(".toggle-password");
+
+//   passwordInputs.forEach((input, index) => {
+//     const toggle = passwordToggles[index];
+
+//     if (input.type === "password") {
+//       input.type = "text";
+//       toggle.classList.remove("fa-eye");
+//       toggle.classList.add("fa-eye-slash");
+//     } else {
+//       input.type = "password";
+//       toggle.classList.remove("fa-eye-slash");
+//       toggle.classList.add("fa-eye");
+//     }
+//   });
+// }
+
 // copyright
 let date = new Date();
 let year = date.getFullYear();
@@ -54,4 +90,4 @@ console.log(year);
 const copyright = document.querySelectorAll('.copyright');
 copyright.forEach(copyrights => {
   copyrights.textContent = year;
-})
+});

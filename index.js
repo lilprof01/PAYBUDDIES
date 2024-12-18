@@ -34,33 +34,30 @@ const hamburger = document.getElementById('hamburger');
 const cancel = document.getElementById('cancel');
 const mobileNav = document.getElementById('mobileNav');
 
-if (window.innerWidth > 768){
+if (window.innerWidth > 900){
   cancel.classList.add('hide');
   hamburger.classList.add('hide');
 };
 
 cancel.addEventListener('click', function closeNav(){
-  if (window.innerWidth <= 768){
-    cancel.style.display = 'none';
-    hamburger.style.display = 'block';
+  cancel.style.display = 'none';
+  hamburger.style.display = 'block';
+  mobileNav.classList.add('slide-out');
+
+  mobileNav.addEventListener('animationend', () => {
     mobileNav.style.display = 'none';
-  }
-  else{
-    hamburger.classList.add('hide');
-    mobileNav.style.display = 'none';
-  }
+    mobileNav.classList.remove('slide-out');
+  }, {once: true});
 });
 
 hamburger.addEventListener('click', function openNav(){
-  if (window.innerWidth <= 768){
-    cancel.style.display = 'block';
-    hamburger.style.display = 'none';
-    mobileNav.style.display = 'flex';
-  }
+  cancel.style.display = 'block';
+  hamburger.style.display = 'none';
+  mobileNav.style.display = 'flex';
 });
 
 window.addEventListener('resize', () => {
-  const widthThreshold = 769;
+  const widthThreshold = 900;
     if (window.innerWidth >= widthThreshold) {
         hamburger.style.display = 'none';
         cancel.style.display = 'none';
@@ -87,13 +84,6 @@ document.querySelectorAll('.scroll').forEach(anchor => {
       document.querySelector(sectionId).scrollIntoView({ 
           behavior: 'smooth' 
       });
-
-      if (window.innerWidth <= 768){
-        cancel.style.display = 'none';
-        hamburger.style.display = 'block';
-        mobileNav.style.display =  'none';
-        mobileDropdown.classList.remove('active');
-      }
   });
 });
 
@@ -156,6 +146,16 @@ faqs.forEach(faq => {
     faq.classList.remove('active');
   });
 });
+
+// phone number input implementation
+const phoneInput = document.querySelector('input[type="tel"]')
+
+// phoneInput.style.display = 'none';
+phoneInput.addEventListener('input', (e) => {
+  if (!/^[0-9]*$/.test(e.target.value)) {
+    e.target.value = '';
+  }
+})
 
 // copyright
 date = new Date();
